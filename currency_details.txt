@@ -1,123 +1,123 @@
 Albania,ALL,Lek
-Afghanistan,AFN,Ø‹
+Afghanistan,AFN,؋
 Argentina,ARS,$
-Aruba,AWG,Æ’
+Aruba,AWG,ƒ
 Australia,AUD,$
-Austria,EUR,â‚¬
-Azerbaijan,AZN,Ð¼Ð°Ð½
+Austria,EUR,€
+Azerbaijan,AZN,ман
 Bahamas,BSD,$
 Barbados,BBD,$
 Belarus,BYR,p.
-Belgium,EUR,â‚¬
+Belgium,EUR,€
 Belize,BZD,BZ$
 Bermuda,BMD,$
 Bolivia,BOB,$b
 Botswana,BWP,P
-Bulgaria,BGN,Ð»Ð²
+Bulgaria,BGN,лв
 Brazil,BRL,R$
 Brunei,BND,$
-Cambodia,KHR,áŸ›
+Cambodia,KHR,៛
 Canada,CAD,$
 Cayman,KYD,$
 Chile,CLP,$
-China,CNY,Â¥
+China,CNY,¥
 Colombia,COP,$
-Costa Rica,CRC,â‚¡
+Costa Rica,CRC,₡
 Croatia,HRK,kn
-Cuba,CUP,â‚±
-Cyprus,EUR,â‚¬
-Czech Republic,CZK,KÄ
+Cuba,CUP,₱
+Cyprus,EUR,€
+Czech Republic,CZK,Kč
 Denmark,DKK,kr
-Egypt,EGP,Â£
+Egypt,EGP,£
 El Salvador,SVC,$
 Estonia,EEK,kr
-Falkland Islands ,FKP,Â£
+Falkland Islands,FKP,£
 Fiji,FJD,$
-Finland,EUR,â‚¬
-France,EUR,â‚¬
-Germany,EUR,â‚¬
-Ghana,GHC,Â¢
-Gibraltar,GIP,Â£
-Greece,EUR,â‚¬
+Finland,EUR,€
+France,EUR,€
+Germany,EUR,€
+Ghana,GHC,¢
+Gibraltar,GIP,£
+Greece,EUR,€
 Guatemala,GTQ,Q
-Guernsey,GGP,Â£
+Guernsey,GGP,£
 Guyana,GYD,$
 Honduras,HNL,L
 Hong Kong,HKD,$
 Hungary,HUF,Ft
 Iceland,ISK,kr
-Ireland,EUR,â‚¬
-India,INR,â‚¹
+Ireland,EUR,€
+India,INR,₹
 Indonesia,IDR,Rp
-Iran,IRR,ï·¼
-Isle of Man,IMP,Â£
-Israel,ILS,â‚ª
-Italy,EUR,â‚¬
+Iran,IRR,﷼
+Isle of Man,IMP,£
+Israel,ILS,₪
+Italy,EUR,€
 Jamaica,JMD,J$
-Japan,JPY,Â¥
-Jersey,JEP,Â£
-Kazakhstan,KZT,Ð»Ð²
-North Korea,KPW,â‚©
-South Korea,KRW,â‚©
-Kyrgyzstan,KGS,Ð»Ð²
-Laos,LAK,â‚­
+Japan,JPY,¥
+Jersey,JEP,£
+Kazakhstan,KZT,лв
+North Korea,KPW,₩
+South Korea,KRW,₩
+Kyrgyzstan,KGS,лв
+Laos,LAK,₭
 Latvia,LVL,Ls
-Lebanon,LBP,Â£
+Lebanon,LBP,£
 Liberia,LRD,$
 Lithuania,LTL,Lt
-Luxembourg,EUR,â‚¬
-Macedonia,MKD,Ð´ÐµÐ½
+Luxembourg,EUR,€
+Macedonia,MKD,ден
 Malaysia,MYR,RM
-Malta,EUR,â‚¬
-Mauritius,MUR,â‚¨
+Malta,EUR,€
+Mauritius,MUR,₨
 Mexico,MXN,$
-Mongolia,MNT,â‚®
+Mongolia,MNT,₮
 Mozambique,MZN,MT
 Namibia,NAD,$
-Nepal,NPR,â‚¨
-Netherlands,ANG,Æ’
+Nepal,NPR,₨
+Netherlands,ANG,ƒ
 New Zealand,NZD,$
 Nicaragua,NIO,C$
-Nigeria,NGN,â‚¦
+Nigeria,NGN,₦
 Norway,NOK,kr
-Oman,OMR,ï·¼
-Pakistan,PKR,â‚¨
+Oman,OMR,﷼
+Pakistan,PKR,₨
 Panama,PAB,B/.
 Paraguay,PYG,Gs
 Peru,PEN,S/.
-Philippines,PHP,â‚±
-Poland,PLN,zÅ‚
-Portugal,EUR,â‚¬
-Qatar,QAR,ï·¼
+Philippines,PHP,₱
+Poland,PLN,zł
+Portugal,EUR,€
+Qatar,QAR,﷼
 Romania,RON,lei
-Russia,RUB,Ñ€ÑƒÐ±
-Saint Helena,SHP,Â£
-Saudi Arabia,SAR,ï·¼
-Serbia,RSD,Ð”Ð¸Ð½.
-Seychelles,SCR,â‚¨
+Russia,RUB,руб
+Saint Helena,SHP,£
+Saudi Arabia,SAR,﷼
+Serbia,RSD,Дин.
+Seychelles,SCR,₨
 Singapore,SGD,$
-Slovakia,EUR,â‚¬
-Slovenia,EUR,â‚¬
+Slovakia,EUR,€
+Slovenia,EUR,€
 Solomon Islands,SBD,$
 Somalia,SOS,S
 South Africa,ZAR,S
-Spain,EUR,â‚¬
-Sri Lanka,LKR,â‚¨
+Spain,EUR,€
+Sri Lanka,LKR,₨
 Sweden,SEK,kr
 Switzerland,CHF,CHF
 Suriname,SRD,$
-Syria,SYP,Â£
+Syria,SYP,£
 Taiwan,TWD,NT$
-Thailand,THB,à¸¿
+Thailand,THB,฿
 Trinidad and Tobago,TTD,TT$
-Turkey,TRL,â‚¤
+Turkey,TRL,₤
 Tuvalu,TVD,$
-Ukraine,UAH,â‚´
-United Kingdom,GBP,Â£
+Ukraine,UAH,₴
+United Kingdom,GBP,£
 United States,USD,$
 Uruguay,UYU,$U
-Uzbekistan,UZS,Ð»Ð²
+Uzbekistan,UZS,лв
 Venezuela,VEF,Bs
-Viet Nam,VND,â‚«
-Yemen,YER,ï·¼
+Viet Nam,VND,₫
+Yemen,YER,﷼
 Zimbabwe,ZWD,Z$

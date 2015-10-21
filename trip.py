@@ -53,7 +53,7 @@ if __name__ == '__main__':
     print('test country class')
     country = Country('Australia', 'AUD', '$')
     print(country.formatted_amount(10.95))
-    country = Country.make(get_details("Turkey"))
+    country = Country.make(get_details("Germany"))
     print(country.formatted_amount(10.95))
 
     print('test tripdetails class')
