@@ -46,6 +46,7 @@ class Error(Exception):
     def __str__(self):
         return repr(self.value)
 
+
 if __name__ == '__main__':
     from currency import get_details
     import time
@@ -53,7 +54,7 @@ if __name__ == '__main__':
     print('test country class')
     country = Country('Australia', 'AUD', '$')
     print(country.formatted_amount(10.95))
-    country = Country.make(get_details("Germany"))
+    country = Country.make(get_details("Japan"))
     print(country.formatted_amount(10.95))
 
     print('test tripdetails class')

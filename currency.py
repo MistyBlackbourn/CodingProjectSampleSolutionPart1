@@ -47,6 +47,18 @@ def get_details(country_name):
     return ()
 
 
+all_details = {}
+
+
+def get_all_details(country_name):
+    details = get_details(country_name)
+    print(details)
+    all_details[country_name] = details
+    print(all_details)
+
+
+
+
 if __name__ == '__main__':
     def conversion_test(amount, source, target):
         converted_amount = convert(amount, source, target)
@@ -88,3 +100,6 @@ if __name__ == '__main__':
     print_details_test('valid details', 'Australia', get_details("Australia"))
     print_details_test('valid details', 'Japan', get_details("Japan"))
     print_details_test('valid details', 'Hong Kong', get_details("Hong Kong"))
+    get_all_details("Australia")
+    get_all_details("Germany")
+    get_all_details("Croatia")
