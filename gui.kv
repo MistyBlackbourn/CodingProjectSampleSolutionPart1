@@ -1,0 +1,39 @@
+BoxLayout:
+    orientation: 'vertical'
+    Label:
+        text: 'Current Trip Location'
+        size: 350, 50
+        color: (0, 0, 0, 1)
+
+    BoxLayout:
+        size: 350, 150
+        orientation: 'horizontal'
+        Label:
+            text: 'Origin Country'
+            color: (0, 0, 0, 1)
+        TextInput:
+    BoxLayout:
+        size: 350, 150
+        orientation: 'horizontal'
+        Spinner:
+            color: (1, .5, 0, 1)
+            background_color: (0, 0, 0, 1)
+            text: 'Spinner'
+            values: 'Spinnertest'
+        TextInput:
+    BoxLayout:
+        Label:
+            size: 350, 300
+            text: 'Todays date'
+            color: (0, 0, 0, 1)
+    BoxLayout:
+        size: 350, 50
+        orientation: 'horizontal'
+        Label:
+            text: 'Status'
+            color: (0, 0, 0, 1)
+            foreground_color: (0, 0, 0, 1)
+        Button:
+            text: 'Update Currency'
+            color: (1, .5, 0, 1)
+            foreground_color: (0, 0, 0, 1)
