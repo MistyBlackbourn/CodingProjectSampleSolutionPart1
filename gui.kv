@@ -1,6 +1,7 @@
 BoxLayout:
     orientation: 'vertical'
     Label:
+        id: output_label
         text: 'Current Trip Location'
         size: 350, 50
         color: (0, 0, 0, 1)
@@ -9,7 +10,7 @@ BoxLayout:
         size: 350, 150
         orientation: 'horizontal'
         Label:
-            text: 'Origin Country'
+            text: app.trip_origin()
             color: (0, 0, 0, 1)
         TextInput:
     BoxLayout:
@@ -18,13 +19,14 @@ BoxLayout:
         Spinner:
             color: (1, .5, 0, 1)
             background_color: (0, 0, 0, 1)
-            text: 'Spinner'
-            values: 'Spinnertest'
+            text: 'Current Trip Location'
+            values: app.trip_details()
         TextInput:
     BoxLayout:
         Label:
+            id: date_label
             size: 350, 300
-            text: 'Todays date'
+            text: 'Today is: ' + app.todays_date()
             color: (0, 0, 0, 1)
     BoxLayout:
         size: 350, 50
