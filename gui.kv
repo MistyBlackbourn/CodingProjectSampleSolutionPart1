@@ -2,7 +2,7 @@ BoxLayout:
     orientation: 'vertical'
     Label:
         id: output_label
-        text: 'Current Trip Location'
+        text: 'Current Trip Location: ' + app.current_location()
         size: 350, 50
         color: (0, 0, 0, 1)
 
@@ -17,9 +17,10 @@ BoxLayout:
         size: 350, 150
         orientation: 'horizontal'
         Spinner:
+            id: country_selection
             color: (1, .5, 0, 1)
             background_color: (0, 0, 0, 1)
-            text: 'Current Trip Location'
+            text: app.current_location()
             values: app.trip_details()
         TextInput:
     BoxLayout:

@@ -2,6 +2,7 @@ from kivy.app import App
 from kivy.lang import Builder
 from kivy.core.window import Window
 from datetime import datetime
+from trip import *
 
 
 class CurrencyConverterApp(App):
@@ -33,13 +34,22 @@ class CurrencyConverterApp(App):
         return trip_origin
 
     def current_location(self):
-        date = todays_date()
-        file = open('config.txt', mode = 'r')
+        date_string = CurrencyConverterApp.todays_date(self)
+        print(date_string)
+        file = open('config.txt', mode='r')
+        details = []
+        file.readline()
         for line in file:
-            pass
+            dates = line.strip().split(',')
+            date_details = tuple(dates)
+            details.append(date_details)
+            print(details)
+        country = Details.current_country(self, date_string, details)
+        return country
 
     def todays_date(self):
         date = datetime.now()
         return date.strftime('%Y/%m/%d')
+
 
 CurrencyConverterApp().run()
