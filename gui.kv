@@ -5,7 +5,6 @@ BoxLayout:
         text: 'Current Trip Location: ' + app.current_location()
         size: 350, 50
         color: (0, 0, 0, 1)
-
     BoxLayout:
         size: 350, 150
         orientation: 'horizontal'
@@ -13,6 +12,8 @@ BoxLayout:
             text: app.trip_origin()
             color: (0, 0, 0, 1)
         TextInput:
+            id: home_to_target
+            on_text: app.convert(self.text)
     BoxLayout:
         size: 350, 150
         orientation: 'horizontal'
@@ -20,9 +21,11 @@ BoxLayout:
             id: country_selection
             color: (1, .5, 0, 1)
             background_color: (0, 0, 0, 1)
-            text: app.current_location()
             values: app.trip_details()
+            on_text: app.conversion(app.trip_origin(), self.text)
         TextInput:
+            id: target_to_home
+            on_text_validate: app.convert(self.text)
     BoxLayout:
         Label:
             id: date_label
@@ -38,5 +41,6 @@ BoxLayout:
             foreground_color: (0, 0, 0, 1)
         Button:
             text: 'Update Currency'
+            on_press: app.update_currency(app.trip_origin(), country_selection.text)
             color: (1, .5, 0, 1)
             foreground_color: (0, 0, 0, 1)

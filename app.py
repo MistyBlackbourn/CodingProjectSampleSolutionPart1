@@ -3,11 +3,14 @@ from kivy.lang import Builder
 from kivy.core.window import Window
 from datetime import datetime
 from trip import *
+from currency import *
+from kivy.properties import StringProperty
 
 
 class CurrencyConverterApp(App):
-    # def __init__(self):
-    #     pass
+    def __init__(self, **kwargs):
+        super(CurrencyConverterApp, self).__init__(**kwargs)
+        self.location_list = []
 
     def build(self):
         Window.size = 300, 500
@@ -17,15 +20,14 @@ class CurrencyConverterApp(App):
         return self.root
 
     def trip_details(self):
-        location_list = []
         file = open('config.txt', mode='r')
         file.readline()
         for line in file:
             details = line.strip().split(',')
             details = tuple(details)
-            location_list.append(details[0])
+            self.location_list.append(details[0])
         file.close()
-        return location_list
+        return self.location_list
 
     def trip_origin(self):
         file = open('config.txt', mode='r')
@@ -51,5 +53,35 @@ class CurrencyConverterApp(App):
         date = datetime.now()
         return date.strftime('%Y/%m/%d')
 
+    def conversion(self, home_currency, target_currency):
+        print(type(home_currency))
+        home_currency = get_details('Australia')
+        print(home_currency)
+        target_currency = get_details(target_currency)
+        print(target_currency)
+        target_to_home = convert(1, target_currency[1], home_currency[1])
+        print(target_to_home)
+        home_to_target = convert(1, home_currency[1], target_currency[1])
+        print(home_to_target)
 
-CurrencyConverterApp().run()
+    def update_currency(self, home_currency, target_currency):
+        print(home_currency)
+        print(target_currency)
+        if not target_currency:
+            target_currency = CurrencyConverterApp.current_location(self)
+        home_currency = get_details('Australia')
+        target_currency = get_details(target_currency)
+        target_to_home = convert(1, target_currency[1], home_currency[1])
+        print(target_to_home)
+        home_to_target = convert(1, home_currency[1], target_currency[1])
+        print(home_to_target)
+
+    def convert(self, amount):
+        pass
+    #     conversion_amount = home_to_target * amount
+    #     print(conversion_amount)
+
+
+if __name__ == '__main__':
+    app = CurrencyConverterApp()
+    app.run()
