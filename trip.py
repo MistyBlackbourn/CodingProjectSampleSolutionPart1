@@ -30,7 +30,6 @@ class Details:
         self.locations.append((start_date, end_date, country_name))
 
     def current_country(self, date_string, locations):
-        print(locations)
         for location in locations:
             if location[1] <= date_string <= location[2]:
                 return location[0]

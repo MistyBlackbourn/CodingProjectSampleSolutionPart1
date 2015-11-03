@@ -38,7 +38,6 @@ def convert(amount, home_currency, target_currency):
 
 def get_details(country_name):
     file = open('currency_details.txt', encoding='utf-8')
-    print(country_name)
     for line in file:
         words = [word for word in line.strip().split(',')]
         if words[0] == country_name:
@@ -53,9 +52,7 @@ all_details = {}
 
 def get_all_details(country_name):
     details = get_details(country_name)
-    print(details)
     all_details[country_name] = details
-    print(all_details)
     return all_details
 
 

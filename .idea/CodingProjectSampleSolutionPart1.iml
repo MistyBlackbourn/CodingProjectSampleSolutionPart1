@@ -2,7 +2,7 @@
 <module type="PYTHON_MODULE" version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$" />
-    <orderEntry type="jdk" jdkName="Python 3.4.3 (C:\Users\Admin\Downloads\Kivy-1.9.0-py3.4-win32-x64\python.bat)" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 3.4.3 (C:\Kivy-1.9.0\python.bat)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
 </module>

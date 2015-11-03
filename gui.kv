@@ -9,23 +9,29 @@ BoxLayout:
         size: 350, 150
         orientation: 'horizontal'
         Label:
-            text: app.trip_origin()
+            text: app.trip_origin
             color: (0, 0, 0, 1)
         TextInput:
+            background_color: (0, .2, 0, 1)
+            foreground_color: (1, .5, 0, 1)
             id: home_to_target
-            on_text: app.convert(self.text)
+            on_text_validate: app.convert_to_target()
+            multiline: False
     BoxLayout:
         size: 350, 150
         orientation: 'horizontal'
         Spinner:
             id: country_selection
             color: (1, .5, 0, 1)
-            background_color: (0, 0, 0, 1)
+            background_color: (0, .5, 0, 1)
             values: app.trip_details()
-            on_text: app.conversion(app.trip_origin(), self.text)
+            on_text: app.conversion(self.text)
         TextInput:
+            background_color: (0, .2, 0, 1)
+            foreground_color: (1, .5, 0, 1)
             id: target_to_home
-            on_text_validate: app.convert(self.text)
+            on_text_validate: app.convert_to_home()
+            multiline: False
     BoxLayout:
         Label:
             id: date_label
@@ -41,6 +47,6 @@ BoxLayout:
             foreground_color: (0, 0, 0, 1)
         Button:
             text: 'Update Currency'
-            on_press: app.update_currency(app.trip_origin(), country_selection.text)
+            on_press: app.update_currency(country_selection.text)
             color: (1, .5, 0, 1)
-            foreground_color: (0, 0, 0, 1)
+            background_color: (0, .5, 0, 1)
