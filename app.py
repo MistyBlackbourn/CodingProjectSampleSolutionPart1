@@ -8,12 +8,13 @@ from currency import *
 
 class CurrencyConverterApp(App):
     def __init__(self, **kwargs):
-        super(CurrencyConverterApp, self).__init__(**kwargs)
+        super().__init__(**kwargs)
         self.location_list = []
         self.trip_origin = ""
         self.home_to_target = ""
         self.target_to_home = ""
         self.country = ""
+
 
     def build(self):
         Window.size = 300, 500
@@ -33,7 +34,7 @@ class CurrencyConverterApp(App):
         return self.location_list
 
     def current_location(self):
-        date_string = CurrencyConverterApp.todays_date(self)
+        date_string = self.todays_date()
         file = open('config.txt', mode='r')
         details = []
         file.readline()
@@ -41,7 +42,7 @@ class CurrencyConverterApp(App):
             dates = line.strip().split(',')
             date_details = tuple(dates)
             details.append(date_details)
-        self.country = Details.current_country(self, date_string, details)
+        self.country = self.current_country(date_string, details)
         return self.country
 
     def todays_date(self):
@@ -63,7 +64,7 @@ class CurrencyConverterApp(App):
         print(self.trip_origin)
         print(target_currency)
         if not target_currency:
-            target_currency = CurrencyConverterApp.current_location(self)
+            target_currency = self.current_location()
         home_currency = get_details('Australia')
         target_currency = get_details(target_currency)
         self.target_to_home = convert(1, target_currency[1], home_currency[1])
@@ -71,15 +72,15 @@ class CurrencyConverterApp(App):
         self.home_to_target = convert(1, home_currency[1], target_currency[1])
         if not self.root.ids.country_selection.text:
             self.root.ids.country_selection.text = self.country
-        print(self.home_to_target)
+        # print(self.home_to_target)
 
-    def convert_to_target(self):
-        converted_amount = float(self.root.ids.target_to_home.text) * float(self.home_to_target)
-        self.root.ids.home_to_target = converted_amount
+    def convert_to_target(self, arg):
+        converted_amount = float(arg.text) * self.home_to_target
+        self.root.ids.target_to_home.text = str(converted_amount)
 
-    def convert_to_home(self):
-        converted_amount = float(self.root.ids.home_to_target.text) * float(self.target_to_home)
-        self.root.ids.target_to_home = converted_amount
+    def convert_to_home(self, arg):
+        converted_amount = float(arg.text) * self.target_to_home
+        self.root.ids.home_to_target.text = str(converted_amount)
 
 
 if __name__ == '__main__':

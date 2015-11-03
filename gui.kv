@@ -15,7 +15,7 @@ BoxLayout:
             background_color: (0, .2, 0, 1)
             foreground_color: (1, .5, 0, 1)
             id: home_to_target
-            on_text_validate: app.convert_to_target()
+            on_text_validate: app.convert_to_target(args[0])
             multiline: False
     BoxLayout:
         size: 350, 150
@@ -30,7 +30,7 @@ BoxLayout:
             background_color: (0, .2, 0, 1)
             foreground_color: (1, .5, 0, 1)
             id: target_to_home
-            on_text_validate: app.convert_to_home()
+            on_text_validate: app.convert_to_home(args[0])
             multiline: False
     BoxLayout:
         Label:
