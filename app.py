@@ -2,6 +2,7 @@ from kivy.app import App
 from kivy.lang import Builder
 from kivy.core.window import Window
 from datetime import datetime
+import time
 from trip import *
 from currency import *
 
@@ -14,7 +15,9 @@ class CurrencyConverterApp(App):
         self.home_to_target = ""
         self.target_to_home = ""
         self.country = ""
-
+        self.date_string = ""
+        self.target_currency = ()
+        self.home_currency = ()
 
     def build(self):
         Window.size = 300, 500
@@ -34,7 +37,6 @@ class CurrencyConverterApp(App):
         return self.location_list
 
     def current_location(self):
-        date_string = self.todays_date()
         file = open('config.txt', mode='r')
         details = []
         file.readline()
@@ -42,45 +44,54 @@ class CurrencyConverterApp(App):
             dates = line.strip().split(',')
             date_details = tuple(dates)
             details.append(date_details)
-        self.country = self.current_country(date_string, details)
+        self.country = Details.current_country(self, self.date_string, details)
         return self.country
 
     def todays_date(self):
         date = datetime.now()
-        return date.strftime('%Y/%m/%d')
+        self.date_string = date.strftime('%Y/%m/%d')
+        return self.date_string
 
     def conversion(self, target_currency):
         print(self.trip_origin, target_currency)
-        home_currency = get_details(self.trip_origin)
-        print(home_currency)
-        target_currency = get_details(target_currency)
-        print(target_currency)
-        self.target_to_home = convert(1, target_currency[1], home_currency[1])
+        self.home_currency = get_details(self.trip_origin)
+        print(self.home_currency)
+        self.target_currency = get_details(target_currency)
+        print(self.target_currency)
+        self.target_to_home = convert(1, self.target_currency[1], self.home_currency[1])
         print(self.target_to_home)
-        self.home_to_target = convert(1, home_currency[1], target_currency[1])
+        self.home_to_target = convert(1, self.home_currency[1], self.target_currency[1])
         print(self.home_to_target)
+        self.root.ids.status.text = ('Updated at {}'.format(time.strftime('%H:%M:%S')))
 
     def update_currency(self, target_currency):
         print(self.trip_origin)
         print(target_currency)
         if not target_currency:
             target_currency = self.current_location()
-        home_currency = get_details('Australia')
-        target_currency = get_details(target_currency)
-        self.target_to_home = convert(1, target_currency[1], home_currency[1])
+        self.home_currency = get_details(self.trip_origin)
+        self.target_currency = get_details(target_currency)
+        self.target_to_home = convert(1, self.target_currency[1], self.home_currency[1])
         print(self.target_to_home)
-        self.home_to_target = convert(1, home_currency[1], target_currency[1])
+        self.home_to_target = convert(1, self.home_currency[1], self.target_currency[1])
         if not self.root.ids.country_selection.text:
             self.root.ids.country_selection.text = self.country
-        # print(self.home_to_target)
+        self.root.ids.status.text = ('Updated at {}'.format(time.strftime('%H:%M:%S')))
 
-    def convert_to_target(self, arg):
-        converted_amount = float(arg.text) * self.home_to_target
-        self.root.ids.target_to_home.text = str(converted_amount)
+    def convert_to_target(self, amount):
+        converted_amount = float(amount.text) * self.home_to_target
+        self.root.ids.target_to_home.text = str(round(converted_amount, 3))
+        self.root.ids.status.text = (
+            '{} ({}) to {} ({})'.format(self.home_currency[1], self.home_currency[2], self.target_currency[1],
+                                        self.target_currency[2]))
 
-    def convert_to_home(self, arg):
-        converted_amount = float(arg.text) * self.target_to_home
-        self.root.ids.home_to_target.text = str(converted_amount)
+    def convert_to_home(self, amount):
+        converted_amount = float(amount.text) * self.target_to_home
+        self.root.ids.home_to_target.text = str(round(converted_amount, 3))
+        print(self.target_currency)
+        self.root.ids.status.text = (
+            '{} ({}) to {} ({})'.format(self.target_currency[1], self.target_currency[2], self.home_currency[1],
+                                        self.home_currency[2]))
 
 
 if __name__ == '__main__':
