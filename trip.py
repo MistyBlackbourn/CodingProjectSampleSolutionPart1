@@ -1,3 +1,6 @@
+from app import *
+
+
 class Country:
     def __init__(self, name, code, symbol):
         self.name = name
@@ -29,10 +32,10 @@ class Details:
                 raise Error('{}-{} already added'.format(start_date, end_date))
         self.locations.append((start_date, end_date, country_name))
 
-    def current_country(self, date_string, locations):
-        for location in locations:
-            if location[1] <= date_string <= location[2]:
-                return location[0]
+    def current_country(self, date_string):
+        for location in self.locations:
+            if location[0] <= date_string <= location[1]:
+                return location[2]
         raise Error('invalid date')
 
     def empty(self):
@@ -47,28 +50,28 @@ class Error(Exception):
         return repr(self.value)
 
 
-# if __name__ == '__main__':
-#     from currency import get_details
-#     import time
-#
-#     print('test country class')
-#     country = Country('Australia', 'AUD', '$')
-#     print(country.formatted_amount(10.95))
-#     country = Country.make(get_details("Japan"))
-#     print(country.formatted_amount(10.95))
-#
-#     print('test tripdetails class')
-#     trip = Details()
-#     trip.add(country, "2015/09/05", "2015/09/20")
-#     trip.add(country, "2015/09/21", "2016/09/20")
-#     try:
-#         print(trip.current_country("2015/09/01"))
-#     except Error as error:
-#         print(error.value)
-#
-#     print(trip.current_country(time.strftime('%Y/%m/%d')))
-#
-#     try:
-#         trip.add(country, "2015/09/05", "2015/09/20")
-#     except Error as error:
-#         print(error.value)
+if __name__ == '__main__':
+    from currency import get_details
+    import time
+
+    print('test country class')
+    country = Country('Australia', 'AUD', '$')
+    print(country.formatted_amount(10.95))
+    country = Country.make(get_details("Turkey"))
+    print(country.formatted_amount(10.95))
+
+    print('test tripdetails class')
+    trip = Details()
+    trip.add(country, "2015/09/05", "2015/09/20")
+    trip.add(country, "2015/09/21", "2016/09/20")
+    try:
+        print(trip.current_country("2015/09/01"))
+    except Error as error:
+        print(error.value)
+
+    print(trip.current_country(time.strftime('%Y/%m/%d')))
+
+    try:
+        trip.add(country, "2015/09/05", "2015/09/20")
+    except Error as error:
+        print(error.value)

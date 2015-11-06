@@ -58,47 +58,47 @@ def get_all_details(country_name):
 
 
 
-# if __name__ == '__main__':
-#     def conversion_test(amount, source, target):
-#         converted_amount = convert(amount, source, target)
-#         test_info = "{}->{}".format(source, target)
-#         print_conversion_test('valid conversion', amount, test_info, converted_amount)
-#
-#         original_amount = convert(converted_amount, target, source)
-#         test_info = "{}->{}".format(target, source)
-#         print_conversion_test('valid conversion reverse', converted_amount, test_info, original_amount)
-#
-#
-#     def print_conversion_test(test_type, test_amount, test_info, test_result):
-#         text = "{:>30} {:>10.2f} {:^20} {:<10.2f}".format(test_type, test_amount, test_info, test_result)
-#         print(text)
-#
-#
-#     print_conversion_test('invalid conversion', 1, 'AUD->AUD', convert(1, 'AUD', 'AUD'))
-#     print_conversion_test('invalid conversion', 1, 'JPY->ABC', convert(1, 'JPY', 'ABC'))
-#     print_conversion_test('invalid conversion', 1, 'ABC->USD', convert(1, 'ABC', 'USD'))
-#
-#     conversion_test(10.95, "AUD", "JPY")
-#     conversion_test(10.95, "AUD", "BGN")
-#     conversion_test(200.15, "BGN", "JPY")
-#     conversion_test(100, "JPY", "USD")
-#     conversion_test(19.99, "USD", "BGN")
-#     conversion_test(19.99, "USD", "AUD")
-#     print()
-#
-#
-#     def print_details_test(test_type, test_info, test_result):
-#         text = "{:>20} {:<10} {}".format(test_type, test_info, test_result)
-#         print(text)
-#
-#
-#     print_details_test('invalid details', 'ABC land', get_details("ABC land"))
-#     print_details_test('invalid details', 'Japanese', get_details("Japanese"))
-#     print_details_test('invalid details', '', get_details(""))
-#
-#     print_details_test('valid details', 'Australia', get_details("Australia"))
-#     print_details_test('valid details', 'Japan', get_details("Japan"))
-#     print_details_test('valid details', 'Hong Kong', get_details("Hong Kong"))
-#     get_all_details("Australia")
-#     get_all_details("Germany")
-#     get_all_details("Croatia")
+if __name__ == '__main__':
+    def conversion_test(amount, source, target):
+        converted_amount = convert(amount, source, target)
+        test_info = "{}->{}".format(source, target)
+        print_conversion_test('valid conversion', amount, test_info, converted_amount)
+
+        original_amount = convert(converted_amount, target, source)
+        test_info = "{}->{}".format(target, source)
+        print_conversion_test('valid conversion reverse', converted_amount, test_info, original_amount)
+
+
+    def print_conversion_test(test_type, test_amount, test_info, test_result):
+        text = "{:>30} {:>10.2f} {:^20} {:<10.2f}".format(test_type, test_amount, test_info, test_result)
+        print(text)
+
+
+    print_conversion_test('invalid conversion', 1, 'AUD->AUD', convert(1, 'AUD', 'AUD'))
+    print_conversion_test('invalid conversion', 1, 'JPY->ABC', convert(1, 'JPY', 'ABC'))
+    print_conversion_test('invalid conversion', 1, 'ABC->USD', convert(1, 'ABC', 'USD'))
+
+    conversion_test(10.95, "AUD", "JPY")
+    conversion_test(10.95, "AUD", "BGN")
+    conversion_test(200.15, "BGN", "JPY")
+    conversion_test(100, "JPY", "USD")
+    conversion_test(19.99, "USD", "BGN")
+    conversion_test(19.99, "USD", "AUD")
+    print()
+
+
+    def print_details_test(test_type, test_info, test_result):
+        text = "{:>20} {:<10} {}".format(test_type, test_info, test_result)
+        print(text)
+
+
+    print_details_test('invalid details', 'ABC land', get_details("ABC land"))
+    print_details_test('invalid details', 'Japanese', get_details("Japanese"))
+    print_details_test('invalid details', '', get_details(""))
+
+    print_details_test('valid details', 'Australia', get_details("Australia"))
+    print_details_test('valid details', 'Japan', get_details("Japan"))
+    print_details_test('valid details', 'Hong Kong', get_details("Hong Kong"))
+    get_all_details("Australia")
+    get_all_details("Germany")
+    get_all_details("Croatia")
